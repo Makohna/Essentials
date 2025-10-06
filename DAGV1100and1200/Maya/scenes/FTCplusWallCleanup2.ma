@@ -1,13 +1,15 @@
 //Maya ASCII 2025ff03 scene
 //Name: FTCplusWallCleanup2.ma
-//Last modified: Mon, Oct 06, 2025 03:20:26 PM
+//Last modified: Mon, Oct 06, 2025 04:03:33 PM
 //Codeset: 1252
 file -rdi 1 -ns "Mug" -rfn "MugRN" -op "v=0;" -typ "mayaAscii" "C:/Users/trifo/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Mug.ma";
 file -rdi 1 -ns "PottedPlant2" -rfn "PottedPlant2RN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/trifo/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/PottedPlant2.ma";
+file -rdi 1 -ns "Couch" -rfn "CouchRN" -op "v=0;" -typ "mayaAscii" "C:/Users/10893642/Documents/maya/projects/default//scenes/Couch.ma";
 file -r -ns "Mug" -dr 1 -rfn "MugRN" -op "v=0;" -typ "mayaAscii" "C:/Users/trifo/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Mug.ma";
 file -r -ns "PottedPlant2" -dr 1 -rfn "PottedPlant2RN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/trifo/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/PottedPlant2.ma";
+file -r -ns "Couch" -dr 1 -rfn "CouchRN" -op "v=0;" -typ "mayaAscii" "C:/Users/10893642/Documents/maya/projects/default//scenes/Couch.ma";
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
 		 "mtoa" "5.4.5";
@@ -17,18 +19,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "685216DE-4DF4-DED2-1A5E-FEB53862D3C4";
+fileInfo "UUID" "E1C22686-4F26-1A5E-7DC0-A5869636F0B5";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "1F4848AC-4EDA-30BA-C295-6099C7ECA659";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 23.184166920064303 29.961132779290001 -45.725059123957749 ;
-	setAttr ".r" -type "double3" -26.738352711345723 1947.7999999756605 0 ;
+	setAttr ".t" -type "double3" 25.908780416480532 30.731939741490983 -36.75153845697762 ;
+	setAttr ".r" -type "double3" -30.938352748512305 1943.3999999746418 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6C333DED-47E7-9E0B-A791-84BBAC8C3803";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 62.560480419684318;
+	setAttr ".coi" 62.560480419674946;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2839,10 +2841,49 @@ createNode mesh -n "pasted__Window_FrameShape" -p "pasted__Window_Frame";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr -s 4 ".pt[24:27]" -type "float3"  0 0.56780434 0 0 0.56780434 
 		0 0 0.56780434 0 0 0.56780434 0;
+createNode transform -n "Couch:polySurface2";
+	rename -uid "DADC6562-4118-1B05-DD4C-D58CC8C2CE96";
+	setAttr ".t" -type "double3" 0 0 8.2666429291161947 ;
+	setAttr ".rp" -type "double3" 0.033279895782470703 2.4115923047065735 0 ;
+	setAttr ".sp" -type "double3" 0.033279895782470703 2.4115923047065735 0 ;
+createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
+	rename -uid "E075DB22-4FB8-58F0-6856-3A910BF59DEA";
+	setAttr -k off ".v";
+	setAttr -s 4 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode fosterParent -n "CouchRNfosterParent1";
+	rename -uid "4DFCCD10-4E26-FFA0-2B4E-118B5CABF242";
+createNode transform -n "Couch:transform7" -p "CouchRNfosterParent1";
+	rename -uid "732D9812-4F8C-1D56-194B-6288E3AD220A";
+	setAttr ".v" no;
+createNode transform -n "Couch:transform1" -p "CouchRNfosterParent1";
+	rename -uid "2BEC0E80-4959-88BD-8BC4-1D9C8590BB2D";
+	setAttr ".v" no;
+createNode transform -n "Couch:transform2" -p "CouchRNfosterParent1";
+	rename -uid "2D49E872-4AB5-66A0-89A9-CDB9C0F16897";
+	setAttr ".v" no;
+createNode transform -n "Couch:transform4" -p "CouchRNfosterParent1";
+	rename -uid "1A577A5B-4C5E-D69F-BE6F-1B8AB3371B8C";
+	setAttr ".v" no;
+createNode transform -n "Couch:transform6" -p "CouchRNfosterParent1";
+	rename -uid "1AD2D923-49CD-F5F8-D1E4-A8A6D9370CDB";
+	setAttr ".v" no;
+createNode transform -n "Couch:transform3" -p "CouchRNfosterParent1";
+	rename -uid "0E17C57E-4290-5D73-070C-A2AC93C1FA38";
+	setAttr ".v" no;
+createNode transform -n "Couch:transform5" -p "CouchRNfosterParent1";
+	rename -uid "7C36C29F-4D2A-8575-2A1B-71A49E871BAD";
+	setAttr ".v" no;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "F9FDB123-49A2-2B9C-AE23-63B0D853EC80";
-	setAttr -s 2 ".lnk";
-	setAttr -s 2 ".slnk";
+	setAttr -s 3 ".lnk";
+	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "02BF7B64-493B-B0F2-AB69-CFB05DF5AEAF";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -3096,6 +3137,173 @@ createNode polyTweak -n "pasted__polyTweak1";
 createNode polyCube -n "pasted__polyCube1";
 	rename -uid "061199AE-486A-D318-6AA9-FF912711DB8E";
 	setAttr ".cuv" 4;
+createNode reference -n "CouchRN";
+	rename -uid "10C97651-44D8-FB76-4C4E-25B1D72CB37D";
+	setAttr -s 24 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"CouchRN"
+		"CouchRN" 0
+		"CouchRN" 57
+		0 "|Couch:CouchBaseShape" "|CouchRNfosterParent1|Couch:transform5" "-s -r "
+		
+		0 "|Couch:CouchTopShape" "|CouchRNfosterParent1|Couch:transform3" "-s -r "
+		
+		0 "|Couch:Coushin1Shape" "|CouchRNfosterParent1|Couch:transform6" "-s -r "
+		
+		0 "|Couch:CoushinShape2" "|CouchRNfosterParent1|Couch:transform4" "-s -r "
+		
+		0 "|Couch:Pillow1Shape" "|CouchRNfosterParent1|Couch:transform2" "-s -r "
+		
+		0 "|Couch:Pillow2Shape" "|CouchRNfosterParent1|Couch:transform1" "-s -r "
+		
+		0 "|Couch:polySurfaceShape2" "|CouchRNfosterParent1|Couch:transform7" "-s -r "
+		
+		0 "|CouchRNfosterParent1|Couch:transform5" "|Couch:CouchBase" "-s -r "
+		0 "|CouchRNfosterParent1|Couch:transform3" "|Couch:CouchTop" "-s -r "
+		0 "|CouchRNfosterParent1|Couch:transform6" "|Couch:Coushin1" "-s -r "
+		0 "|CouchRNfosterParent1|Couch:transform4" "|Couch:Coushin2" "-s -r "
+		0 "|CouchRNfosterParent1|Couch:transform2" "|Couch:Pillow1" "-s -r "
+		0 "|CouchRNfosterParent1|Couch:transform1" "|Couch:Pillow2" "-s -r "
+		0 "|CouchRNfosterParent1|Couch:transform7" "|Couch:polySurface1" "-s -r "
+		
+		2 "|Couch:CouchBase" "translate" " -type \"double3\" 0 0 0"
+		2 "|CouchRNfosterParent1|Couch:transform5|Couch:CouchBaseShape" "intermediateObject" 
+		" 1"
+		2 "|Couch:CouchTop" "translate" " -type \"double3\" 0 0 0"
+		2 "|CouchRNfosterParent1|Couch:transform3|Couch:CouchTopShape" "intermediateObject" 
+		" 1"
+		2 "|Couch:Coushin1" "translate" " -type \"double3\" 0 0 0"
+		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape" "intermediateObject" 
+		" 1"
+		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape" "instObjGroups.objectGroups[0].objectGrpCompList" 
+		" -type \"componentList\" 1 \"f[0:149]\""
+		2 "|Couch:Coushin2" "translate" " -type \"double3\" 0 0 0"
+		2 "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2" "intermediateObject" 
+		" 1"
+		2 "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2" "instObjGroups.objectGroups[0].objectGrpCompList" 
+		" -type \"componentList\" 1 \"f[0:149]\""
+		2 "|Couch:Pillow1" "translate" " -type \"double3\" 0 0 0"
+		2 "|CouchRNfosterParent1|Couch:transform2|Couch:Pillow1Shape" "intermediateObject" 
+		" 1"
+		2 "|Couch:Pillow2" "translate" " -type \"double3\" 0 0 0"
+		2 "|CouchRNfosterParent1|Couch:transform1|Couch:Pillow2Shape" "intermediateObject" 
+		" 1"
+		2 "|Couch:polySurface1" "translate" " -type \"double3\" 0 0 0"
+		2 "|CouchRNfosterParent1|Couch:transform7|Couch:polySurfaceShape2" "intermediateObject" 
+		" 1"
+		2 "|CouchRNfosterParent1|Couch:transform7|Couch:polySurfaceShape2" "uvSet[0].uvSetName" 
+		" -type \"string\" \"map1\""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform7|Couch:polySurfaceShape2.outMesh" 
+		"CouchRN.placeHolderList[1]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform7|Couch:polySurfaceShape2.worldMatrix" 
+		"CouchRN.placeHolderList[2]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform1|Couch:Pillow2Shape.outMesh" 
+		"CouchRN.placeHolderList[3]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform1|Couch:Pillow2Shape.worldMatrix" 
+		"CouchRN.placeHolderList[4]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform2|Couch:Pillow1Shape.outMesh" 
+		"CouchRN.placeHolderList[5]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform2|Couch:Pillow1Shape.worldMatrix" 
+		"CouchRN.placeHolderList[6]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.instObjGroups.objectGroups[0]" 
+		"CouchRN.placeHolderList[7]" ""
+		5 4 "CouchRN" "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"CouchRN.placeHolderList[8]" ""
+		5 4 "CouchRN" "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"CouchRN.placeHolderList[9]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.outMesh" 
+		"CouchRN.placeHolderList[10]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.worldMatrix" 
+		"CouchRN.placeHolderList[11]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.compInstObjGroups.compObjectGroups[0]" 
+		"CouchRN.placeHolderList[12]" ""
+		5 4 "CouchRN" "|CouchRNfosterParent1|Couch:transform4|Couch:CoushinShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"CouchRN.placeHolderList[13]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.instObjGroups.objectGroups[0]" 
+		"CouchRN.placeHolderList[14]" ""
+		5 4 "CouchRN" "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"CouchRN.placeHolderList[15]" ""
+		5 4 "CouchRN" "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"CouchRN.placeHolderList[16]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.outMesh" 
+		"CouchRN.placeHolderList[17]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.worldMatrix" 
+		"CouchRN.placeHolderList[18]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.compInstObjGroups.compObjectGroups[0]" 
+		"CouchRN.placeHolderList[19]" ""
+		5 4 "CouchRN" "|CouchRNfosterParent1|Couch:transform6|Couch:Coushin1Shape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"CouchRN.placeHolderList[20]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform3|Couch:CouchTopShape.outMesh" 
+		"CouchRN.placeHolderList[21]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform3|Couch:CouchTopShape.worldMatrix" 
+		"CouchRN.placeHolderList[22]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform5|Couch:CouchBaseShape.outMesh" 
+		"CouchRN.placeHolderList[23]" ""
+		5 3 "CouchRN" "|CouchRNfosterParent1|Couch:transform5|Couch:CouchBaseShape.worldMatrix" 
+		"CouchRN.placeHolderList[24]" "";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode polyUnite -n "polyUnite1";
+	rename -uid "21B6B45A-4541-E5FB-581C-FD9FF6C9980B";
+	setAttr -s 7 ".ip";
+	setAttr -s 7 ".im";
+createNode groupId -n "Couch:groupId16";
+	rename -uid "E7B223B1-429B-87B5-F0E7-248BAC6C530F";
+	setAttr ".ihi" 0;
+createNode groupId -n "Couch:groupId17";
+	rename -uid "E1AE8B2D-490B-F465-CE30-DAB0C30FC1EA";
+	setAttr ".ihi" 0;
+createNode groupId -n "Couch:groupId18";
+	rename -uid "D5F73E5D-4249-5013-477A-E098AB9E39BD";
+	setAttr ".ihi" 0;
+createNode groupId -n "Couch:groupId19";
+	rename -uid "F8B8C915-4890-D863-58C6-D78AE4A85714";
+	setAttr ".ihi" 0;
+createNode groupId -n "Couch:groupId20";
+	rename -uid "851B079A-4376-089C-8092-D6A82EE2D5F9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Couch:groupParts2";
+	rename -uid "B016318C-4757-57BE-114D-10970C4BB668";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "f[0:135]" "f[286:335]" "f[486:572]";
+createNode groupId -n "Couch:groupId21";
+	rename -uid "FBD57C29-4A7D-9870-001B-24B9A9E92EF3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Couch:groupParts3";
+	rename -uid "595A8F5D-4866-BBE8-61FA-D6A44125FE61";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "f[136:285]" "f[336:485]" "f[573:892]";
+createNode groupId -n "Couch:groupId22";
+	rename -uid "223A33E9-41ED-BA12-7B87-7FBFA722C29D";
+	setAttr ".ihi" 0;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -3107,23 +3315,25 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 2 ".st";
+	setAttr -s 3 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
 	setAttr -s 5 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 34 ".dsm";
+	setAttr -s 43 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 4 ".gn";
+	setAttr -s 12 ".gn";
 select -ne :initialParticleSE;
+	setAttr -s 9 ".dsm";
 	setAttr ".ro" yes;
+	setAttr -s 5 ".gn";
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
@@ -3145,6 +3355,30 @@ select -ne :hardwareRenderGlobals;
 connectAttr "MugMesh_translateX.o" "MugRN.phl[1]";
 connectAttr "MugMesh_translateY.o" "MugRN.phl[2]";
 connectAttr "MugMesh_translateZ.o" "MugRN.phl[3]";
+connectAttr "CouchRN.phl[1]" "polyUnite1.ip[0]";
+connectAttr "CouchRN.phl[2]" "polyUnite1.im[0]";
+connectAttr "CouchRN.phl[3]" "polyUnite1.ip[6]";
+connectAttr "CouchRN.phl[4]" "polyUnite1.im[6]";
+connectAttr "CouchRN.phl[5]" "polyUnite1.ip[5]";
+connectAttr "CouchRN.phl[6]" "polyUnite1.im[5]";
+connectAttr "CouchRN.phl[7]" ":initialShadingGroup.dsm" -na;
+connectAttr "Couch:groupId18.id" "CouchRN.phl[8]";
+connectAttr ":initialShadingGroup.mwc" "CouchRN.phl[9]";
+connectAttr "CouchRN.phl[10]" "polyUnite1.ip[3]";
+connectAttr "CouchRN.phl[11]" "polyUnite1.im[3]";
+connectAttr "CouchRN.phl[12]" ":initialShadingGroup.dsm" -na;
+connectAttr "Couch:groupId19.id" "CouchRN.phl[13]";
+connectAttr "CouchRN.phl[14]" ":initialShadingGroup.dsm" -na;
+connectAttr "Couch:groupId16.id" "CouchRN.phl[15]";
+connectAttr ":initialShadingGroup.mwc" "CouchRN.phl[16]";
+connectAttr "CouchRN.phl[17]" "polyUnite1.ip[1]";
+connectAttr "CouchRN.phl[18]" "polyUnite1.im[1]";
+connectAttr "CouchRN.phl[19]" ":initialShadingGroup.dsm" -na;
+connectAttr "Couch:groupId17.id" "CouchRN.phl[20]";
+connectAttr "CouchRN.phl[21]" "polyUnite1.ip[4]";
+connectAttr "CouchRN.phl[22]" "polyUnite1.im[4]";
+connectAttr "CouchRN.phl[23]" "polyUnite1.ip[2]";
+connectAttr "CouchRN.phl[24]" "polyUnite1.im[2]";
 connectAttr "FloorLyr.di" "FloorMesh.do";
 connectAttr "groupId26.id" "Polyu1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Polyu1.iog.og[0].gco";
@@ -3157,6 +3391,12 @@ connectAttr "groupId29.id" "poly1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "poly1.iog.og[0].gco";
 connectAttr "polySplitRing2.out" "poly1.i";
 connectAttr "pasted__polyExtrudeFace3.out" "pasted__Window_FrameShape.i";
+connectAttr "Couch:groupParts3.og" "Couch:polySurface1Shape.i";
+connectAttr "Couch:groupId20.id" "Couch:polySurface1Shape.iog.og[0].gid";
+connectAttr ":initialParticleSE.mwc" "Couch:polySurface1Shape.iog.og[0].gco";
+connectAttr "Couch:groupId21.id" "Couch:polySurface1Shape.iog.og[1].gid";
+connectAttr ":initialShadingGroup.mwc" "Couch:polySurface1Shape.iog.og[1].gco";
+connectAttr "Couch:groupId22.id" "Couch:polySurface1Shape.ciog.cog[0].cgid";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -3190,6 +3430,11 @@ connectAttr "pasted__Window_FrameShape.wm" "pasted__polyExtrudeFace2.mp";
 connectAttr "pasted__polyTweak1.out" "pasted__polyExtrudeFace1.ip";
 connectAttr "pasted__Window_FrameShape.wm" "pasted__polyExtrudeFace1.mp";
 connectAttr "pasted__polyCube1.out" "pasted__polyTweak1.ip";
+connectAttr "CouchRNfosterParent1.msg" "CouchRN.fp";
+connectAttr "polyUnite1.out" "Couch:groupParts2.ig";
+connectAttr "Couch:groupId20.id" "Couch:groupParts2.gi";
+connectAttr "Couch:groupParts2.og" "Couch:groupParts3.ig";
+connectAttr "Couch:groupId21.id" "Couch:groupParts3.gi";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "FloorMeshShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "poly.iog" ":initialShadingGroup.dsm" -na;
@@ -3216,7 +3461,16 @@ connectAttr "Polyu1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "WallShape2.iog.og[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "poly1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__Window_FrameShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "Couch:polySurface1Shape.iog.og[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId26.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId28.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId29.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Couch:groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Couch:groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Couch:groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Couch:groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Couch:groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Couch:polySurface1Shape.iog.og[0]" ":initialParticleSE.dsm" -na;
+connectAttr "Couch:polySurface1Shape.ciog.cog[0]" ":initialParticleSE.dsm" -na;
+connectAttr "Couch:groupId20.msg" ":initialParticleSE.gn" -na;
 // End of FTCplusWallCleanup2.ma
