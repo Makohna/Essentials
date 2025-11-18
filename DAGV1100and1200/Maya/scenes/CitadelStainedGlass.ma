@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: CitadelStainedGlass.ma
-//Last modified: Tue, Nov 18, 2025 02:24:39 PM
+//Last modified: Tue, Nov 18, 2025 02:34:34 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.3";
@@ -10,17 +10,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "428BBE04-46FC-7FA4-0D2D-0C870869D323";
+fileInfo "UUID" "25C0D096-47AE-850F-AC77-C588DC47AFC7";
 createNode transform -s -n "persp";
 	rename -uid "0462ACEF-4972-1461-C941-30840A8F9770";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 32.266376410851556 22.452323332299756 21.129457507837177 ;
+	setAttr ".t" -type "double3" 37.441611277884995 24.176834913074401 24.699612904636176 ;
 	setAttr ".r" -type "double3" -15.338352729678098 55.400000000008099 1.4002772369918157e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "072C40C4-4954-AA5E-AC66-4FA8CC7420F0";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 44.460787208985536;
+	setAttr ".coi" 50.980220135128526;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
